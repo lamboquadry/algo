@@ -1,0 +1,32 @@
+ALGORITHM SentenceAnalysis
+
+VAR
+    ch : character
+    length ← 0
+    words ← 1
+    vowels ← 0
+BEGIN
+     Read(ch)
+
+    While ch <> '.' do
+        length ← length + 1
+
+        If ch = ' ' Then
+            words ← words + 1
+        EndIf
+
+        If ch = 'a' Or ch = 'e' Or ch = 'i' Or ch = 'o' Or ch = 'u'
+           Or ch = 'A' Or ch = 'E' Or ch = 'I' Or ch = 'O' Or ch = 'U' Then
+            vowels ← vowels + 1
+        EndIf
+
+        Read(ch)
+    EndWhile
+
+    length ← length + 1    // Count the final period
+
+    Write("Length = ", length)
+    Write("Words = ", words)
+    Write("Vowels = ", vowels)
+END
+
