@@ -1,35 +1,70 @@
-let a = 7;
-let b = 12;
-
-function bitwiseAND(a, b) {
-    return a & b;
+function reverseString(str) {
+    return str.split("").reverse().join("");
 }
 
-function bitwiseOR(a, b) {
-    return a | b;
+function countCharacters(str) {
+    return str.length;
 }
 
-function bitwiseXOR(a, b) {
-    return a ^ b;
+function capitalizeWords(sentence) {
+    return sentence
+        .split(" ")
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+        .join(" ");
 }
 
-console.log(bitwiseAND(a, b));
-console.log(bitwiseOR(a, b));
-console.log(bitwiseXOR(a, b));
-
-
-// level 2
-
-function redundant(str) {
-    return function() {
-        return str;
-    };
+function findMaximum(numbers) {
+    return Math.max(...numbers);
 }
 
-const f1 = redundant("apple");
-const f2 = redundant("pear");
-const f3 = redundant("");
+function findMinimum(numbers) {
+    return Math.min(...numbers);
+}
 
-console.log(f1()); 
-console.log(f2()); 
-console.log(f3()); 
+function sumArray(numbers) {
+    let sum = 0;
+
+    for (let number of numbers) {
+        sum += number;
+    }
+
+    return sum;
+}
+
+function filterArray(numbers) {
+    return numbers.filter(number => number >= 5);
+}
+
+function factorial(n) {
+    let result = 1;
+
+    for (let i = 1; i <= n; i++) {
+        result *= i;
+    }
+
+    return result;
+}
+
+function isPrime(number) {
+    if (number < 2) {
+        return false;
+    }
+
+    for (let i = 2; i < number; i++) {
+        if (number % i === 0) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+function fibonacci(terms) {
+    let sequence = [0, 1];
+
+    for (let i = 2; i < terms; i++) {
+        sequence.push(sequence[i - 1] + sequence[i - 2]);
+    }
+
+    return sequence.slice(0, terms);
+}
